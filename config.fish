@@ -54,5 +54,10 @@ set -gx NVM_DIR $HOME/.local/share/nvm
 # Use Node.js version 22
 nvm use 22
 
+# Set custom fish configs
+set -q XDG_CONFIG_HOME || set XDG_CONFIG_HOME "$HOME/.config"
+source $XDG_CONFIG_HOME/fish/aliases.fish
+source $XDG_CONFIG_HOME/fish/web.fish
+
 # Clear the terminal
 clear
