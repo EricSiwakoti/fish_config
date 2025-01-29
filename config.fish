@@ -5,6 +5,8 @@ alias lf "yazi"
 alias vim "nvim"
 alias bat "batcat"
 alias ls "eza --icons --group-directories-first"
+alias docker "distrobox-host-exec podman"
+alias docker-compose "distrobox-host-exec podman-compose"
 
 # Initialize starship
 starship init fish | source
@@ -50,6 +52,9 @@ set -gx PATH $PATH ~/go/bin
 
 # Set NVM directory to the correct path
 set -gx NVM_DIR $HOME/.local/share/nvm
+
+# Set Docker Host environment variable
+set -gx DOCKER_HOST "unix:///run/host/run/user/1000/podman/podman.sock"
 
 # Use Node.js version 22
 nvm use 22
